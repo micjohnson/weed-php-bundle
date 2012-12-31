@@ -23,7 +23,7 @@ class WeedStorage
 		$locs = $lookup['locations'];
 		$count = count($locs);
 		$rand = rand(0, $count-1);
-		return $locs[$rand];
+		return $locs[$rand]['publicUrl'];
 	}
 
 	public function store($entity)
@@ -60,9 +60,7 @@ class WeedStorage
 		$volumeId = $volumeId[0];
 		$serverAddress = $this->randomLookup($volumeId);
 		
-		$serverAddress = json_decode($serverAddress, true);
-		
-		$this->weedPhp->retrieve($serverAddress['publicUrl'], $fileId);
+		$this->weedPhp->retrieve($serverAddress, $fileId);
 	}
 	public function delete($entity)
 	{
