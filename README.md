@@ -114,7 +114,7 @@ class WebImage extends BaseImage
 ```
 
 ### Step 4: Set your entities data property with your files raw data
-Data is not persisted, and is only temporary. So be sure to store right after storing the data.
+Data is not persisted, and is only temporary. So be sure to store right after setting the data property.
 ```
 $image = new WebImage();
 $image->setData($rawImage);
@@ -131,7 +131,7 @@ $entityManager->persist($image);
 $entityManager->flush();
 ```
 
-### Step 6: retrieve and delete your files
+### Step 6: Retrieve and delete files
 The manager also retrieves and deletes
 ```
 $weedManager = $this->get('weed_php.manager');
