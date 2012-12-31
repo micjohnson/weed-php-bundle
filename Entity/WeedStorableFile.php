@@ -50,6 +50,11 @@ class WeedStorableFile
 		$this->fileId = $fid;
 	}
 	
+	public function getFileId()
+	{
+		return $this->fileId;
+	}
+	
 	public function setData($data)
 	{
 		$this->data = $data;
