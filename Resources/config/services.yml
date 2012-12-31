@@ -1,0 +1,13 @@
+parameters:
+    weed-php.master.address: "localhost:9333"
+
+services:
+    weed-php.transport:
+        class: WeedPhp\Client
+        arguments: [%weed-php.master.address%]
+    weed-php.storage:
+        class: Micjohnson\WeedPhpBundle\WeedStorage
+        arguments: [@weed-php.transport]
+    weed-php.manager:
+        class: Micjohnson\WeedPhpBundle\WeedManager
+        arguments: [@weed-php.storage]
