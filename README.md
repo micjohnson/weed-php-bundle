@@ -1,7 +1,7 @@
 weed-php-bundle
 ===============
 
-Weed-FS integration for your Symfony 2 application using WeedPhp
+[Weed-FS](http://code.google.com/p/weed-fs/) integration for your Symfony 2 application using [WeedPhp](https://github.com/micjohnson/weed-php)
 
 About Weed-FS
 ===============
