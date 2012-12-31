@@ -59,7 +59,10 @@ class WeedStorage
 		$volumeId = explode(',', $entity->getFileId());
 		$volumeId = $volumeId[0];
 		$serverAddress = $this->randomLookup($volumeId);
-		$this->weedPhp->retrieve($serverAddress, $fileId);
+		
+		$serverAddress = json_decode($serverAddress, true);
+		
+		$this->weedPhp->retrieve($serverAddress['publicUrl'], $fileId);
 	}
 	public function delete($entity)
 	{
