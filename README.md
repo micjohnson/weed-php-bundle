@@ -10,8 +10,8 @@ Weed-FS Homepage: [weedfs](http://code.google.com/p/weed-fs/)
 
 Weed-FS is a simple and highly scalable distributed file system. There are two objectives:
 
- 1) to store billions of files!  
- 2) to serve the files fast! 
+ - to store billions of files!  
+ - to serve the files fast! 
 
 Instead of supporting full POSIX file system semantics, Weed-FS choose to implement only a key~file mapping. Similar to the word "NoSQL", you can call it as "NoFS".
 
