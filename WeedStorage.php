@@ -65,7 +65,7 @@ class WeedStorage
 	public function delete($entity)
 	{
 		$fileId = $entity->getFileId();
-	    $volumeId = explode(',', $entity->getField());
+	    $volumeId = explode(',', $entity->getFileId());
 		$volumeId = $volumeId[0];
 		$serverAddress = $this->randomLookup($volumeId);
 		foreach($entity->getVersions() as $offset=>$name) {
