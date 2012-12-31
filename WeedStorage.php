@@ -40,6 +40,7 @@ class WeedStorage
 		$assignResponse = json_decode($assignResponse, true);
 		$volumeAddress = $assignResponse['publicUrl'];
 		$fid = $assignResponse['fid'];
+		$entity->setFileId($fid);
 		$response = $this->weedPhp->storeMultiple($volumeAddress, $fid, $files);
 		return $response;
 	}

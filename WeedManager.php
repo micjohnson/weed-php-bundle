@@ -21,9 +21,6 @@ class WeedManager
 		    $versions[] = $name;
 		}
 		$response = $this->storage->store($entity);
-		$response = json_decode($response, true);
-		$fileId = $response['fid'];
-		$entity->setFileId($fileId);
 		$entity->setVersions($versions);
 	}
 	
