@@ -54,7 +54,7 @@ class WeedStorage
 		    }
 		    $fileId .= '_' . $entity->getVersionOffset($version);
 		}
-		$volumeId = explode(',', $entity->getField());
+		$volumeId = explode(',', $entity->getFileId());
 		$volumeId = $volumeId[0];
 		$serverAddress = $this->randomLookup($volumeId);
 		$this->weedPhp->retrieve($serverAddress, $fileId);
