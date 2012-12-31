@@ -30,3 +30,117 @@ Status
 ===============
 
 Ready for testing / in development
+
+Documentation
+===============
+
+This bundle is meant to be tested only, it will be updated rapidly.
+
+### Step 1: Install using composer
+
+Add to your composer.json
+```
+"require": {
+    "micjohnson/weed-php-bundle": "dev-master"
+}
+```
+
+Install through composer.phar
+```
+php composer.phar update micjohnson/weed-php-bundle
+```
+
+### Step 2: Add to AppKernel.php
+Enable the bundle in the kernel
+```
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+			new Micjohnson\WeedPhpBundle\MicjohnsonWeedPhpBundle(),
+        );
+    }
+```
+
+### Step 3: Extend the base Image Entity
+If you are doing images, you might want a single table for all files
+```
+<?php
+namespace Test\WeedPhpBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+use Micjohnson\WeedPhpBundle\Entity\WeedStorableFile;
+
+/**
+ * @ORM\Entity()
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"baseimage" = "Test\WeedPhpBundle\Entity\BaseImage", "webimage" = "Test\WeedPhpBundle\Entity\WebImage"})
+ * @ORM\Entity()
+ * @ORM\Table(name="test_weed_php")
+ *
+ */
+class BaseImage extends WeedStorableFile
+{
+    /**
+     *
+     * id
+     * @var unknown_type
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+}
+```
+
+Heres the entity you would use
+```
+<?php
+namespace Test\WeedPhpBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+use Test\WeedPhpBundle\Entity\BaseImage;
+
+/**
+ * @ORM\Entity()
+ */
+class WebImage extends BaseImage
+{
+    
+}
+```
+
+### Step 4: Set your entities data property with your files raw data
+
+```
+$image = new WebImage();
+$image->setData($rawImage);
+```
+
+### Step 5: Use WeedManager to store
+Use the weedphp's manager to store
+```
+$weedManager = $this->get('weed_php.manager');
+$weedManager->store($image);
+
+//persist to save location data in database
+$entityManager->persist($image);
+$entityManager->flush();
+```
+
+### Step 6: retrieve and delete you files
+The manager also retrieves and deletes
+```
+$weedManager = $this->get('weed_php.manager');
+
+$imageRawData = $weedManager->retrieve($image);
+
+$weedManager->delete($image);
+
+// file is gone, you can get rid fo the entity
+$entityManager->remove($image);
+$entityManager->flush();
+```
