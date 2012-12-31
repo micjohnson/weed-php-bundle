@@ -127,6 +127,15 @@ $image = new WebImage();
 $image->setData($rawImage);
 ```
 
+You can also pass an array, with keys representing the name of the version of the file, and the value being the raw data.
+```
+$image = new WebImage();
+$imageVersions = array("full"=>$fullImageRaw, "sm"=>$smallThumbRaw, "lg"=>$largeThumbRaw);
+$image->setData($rawImage);
+```
+
+You can access each version of the file seperately using the manager later. You can pass a second param $weedManager->retrieve($image, "sm"); Read more below.
+
 ### Step 6: Use WeedManager to store
 Use the weedphp's manager to store
 ```
@@ -150,4 +159,12 @@ $weedManager->delete($image);
 // file is gone, you can get rid fo the entity
 $entityManager->remove($image);
 $entityManager->flush();
+```
+By default when you call $weedManager->retrieve($image); it grabs the first, or only version of file, if $data is an array.  
+
+You can optionally pass a second parameter which is the name you gave the version of your file. This will access that version instead of the default.
+  
+Assuming you have data stored labeled "sm"
+```
+$smallThumbRaw = $weedManager->retrieve($image, "sm");
 ```
