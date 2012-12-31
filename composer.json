@@ -1,6 +1,6 @@
 {
     "name": "micjohnson/weed-php-bundle",
-    "description": "WeedPhp integration for your Symfony 2 application",
+    "description": "Weed-FS integration for your Symfony 2 application using WeedPhp",
     "keywords": ["weedfs","client","image storage","blob","clob"],
     "homepage": "https://github.com/micjohnson/weed-php-bundle",
     "type": "symfony-bundle",
