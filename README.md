@@ -134,7 +134,7 @@ $imageVersions = array("full"=>$fullImageRaw, "sm"=>$smallThumbRaw, "lg"=>$large
 $image->setData($imageVersions);
 ```
 
-You can access each version of the file seperately using the manager later.  
+You can access each version of the file seperately using the manager later, keep in mind the default will always be the first you put.  
 
 You can pass a second param:
 ```
