@@ -1,0 +1,35 @@
+{
+    "name": "micjohnson/weed-php-bundle",
+    "description": "WeedPhp integration for your Symfony 2 application",
+    "keywords": ["weedfs","client","image storage","blob","clob"],
+    "homepage": "https://github.com/micjohnson/weed-php-bundle",
+    "type": "symfony-bundle",
+    "license": "Apache 2.0",
+    "authors": [
+        {
+            "name": "Mic Johnson",
+            "homepage": "http://micjohnson.com/"
+        }
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/framework-bundle": ">=2.1.0,<2.3-dev",
+        "symfony/console": ">=2.1.0,<2.3-dev",
+        "symfony/form": ">=2.1.0,<2.3-dev",
+        "micjohnson/weed-php": "dev-master"
+    },
+    "require-dev":{
+        "doctrine/orm":"2.2.*",
+        "doctrine/mongodb-odm":"dev-master",
+        "propel/propel1":"1.6.*"
+    },
+    "suggest": {
+        "doctrine/orm": "2.2.*",
+        "doctrine/mongodb-odm": ">=3.0.0-beta2,<3.1-dev",
+        "propel/propel1": "1.6.*"
+    },
+    "autoload": {
+        "psr-0": { "Micjohnson\\WeedPhpBundle": "" }
+    },
+    "minimum-stability":"dev",
+    "target-dir": "Micjohnson/WeedPhpBundle"
+}
