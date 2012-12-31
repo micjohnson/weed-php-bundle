@@ -4,10 +4,10 @@ parameters:
 services:
     weed_php.transport:
         class: WeedPhp\Client
-        arguments: [%weed-php.master.address%]
+        arguments: [%weed_php.master.address%]
     weed_php.storage:
         class: Micjohnson\WeedPhpBundle\WeedStorage
-        arguments: [@weed-php.transport]
+        arguments: [@weed_php.transport]
     weed_php.manager:
         class: Micjohnson\WeedPhpBundle\WeedManager
-        arguments: [@weed-php.storage]
+        arguments: [@weed_php.storage]
