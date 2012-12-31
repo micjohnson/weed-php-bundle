@@ -1,7 +1,7 @@
 <?php
 namespace Micjohnson\WeedPhpBundle\Entity;
 
-use Doctrine\ORM;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\MappedSuperClass
