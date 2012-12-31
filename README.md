@@ -6,7 +6,7 @@ Weed-FS integration for your Symfony 2 application using WeedPhp
 About Weed-FS
 ===============
 
-Description from: http://code.google.com/p/weed-fs/
+Weed-FS Homepage: [weedfs](http://code.google.com/p/weed-fs/)
 
 Weed-FS is a simple and highly scalable distributed file system. There are two objectives:
 
@@ -20,6 +20,7 @@ Instead of managing all file metadata in a central master, Weed-FS choose to man
 Weed-FS models after Facebook's [Haystack design paper.](http://www.usenix.org/event/osdi10/tech/full_papers/Beaver.pdf)
 
 Weed-FS costs only 40 bytes disk storage for each file's metadata. It is so simple with O(1) disk read that you are welcome to challenge the performance with your actual use cases.
+
 
 
 Status
