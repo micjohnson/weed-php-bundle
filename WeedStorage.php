@@ -41,7 +41,7 @@ class WeedStorage
 		$volumeAddress = $assignResponse['publicUrl'];
 		$fid = $assignResponse['fid'];
 		$response = $this->weedPhp->storeMultiple($volumeAddress, $fid, $files);
-		return response;
+		return $response;
 	}
 
 	public function retrieve($entity, $version)
