@@ -131,7 +131,7 @@ You can also pass an array, with keys representing the name of the version of th
 ```
 $image = new WebImage();
 $imageVersions = array("full"=>$fullImageRaw, "sm"=>$smallThumbRaw, "lg"=>$largeThumbRaw);
-$image->setData($rawImage);
+$image->setData($imageVersions);
 ```
 
 You can access each version of the file seperately using the manager later. You can pass a second param $weedManager->retrieve($image, "sm"); Read more below.
