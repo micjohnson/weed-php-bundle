@@ -134,7 +134,13 @@ $imageVersions = array("full"=>$fullImageRaw, "sm"=>$smallThumbRaw, "lg"=>$large
 $image->setData($imageVersions);
 ```
 
-You can access each version of the file seperately using the manager later. You can pass a second param $weedManager->retrieve($image, "sm"); Read more below.
+You can access each version of the file seperately using the manager later.  
+
+You can pass a second param:
+```
+$thumbSmallRaw = $weedManager->retrieve($image, "sm");
+```
+Read more below.
 
 ### Step 6: Use WeedManager to store
 Use the weedphp's manager to store
