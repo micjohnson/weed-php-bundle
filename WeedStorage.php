@@ -21,7 +21,9 @@ class WeedStorage
 		$lookup = $this->weedPhp->lookup($volumeId);
 		$lookup = json_decode($lookup, true);
 		$locs = $lookup['locations'];
-		return $locs[rand(0,count($lookup['locations'])-1)];
+		$count = count($locs);
+		$rand = rand(0, $count-1);
+		return $locs[$rand];
 	}
 
 	public function store($entity)
