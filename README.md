@@ -62,7 +62,15 @@ Enable the bundle in the kernel
     }
 ```
 
-### Step 3: Extend the base Image Entity
+### Step 3: Configure the address and port of your master weed-fs server
+Note: This defaults to localhost:9333, you only need to override it if its not default.
+```
+// app/config/parameters.yml
+parameters:
+    weed_php.master.address: "localhost:9333"
+```
+
+### Step 4: Extend the base Image Entity
 If you are doing images, you might want a single table for all files
 ```
 <?php
@@ -112,14 +120,14 @@ class WebImage extends BaseImage
 }
 ```
 
-### Step 4: Set your entities data property with your files raw data
+### Step 5: Set your entities data property with your files raw data
 Data is not persisted, and is only temporary. So be sure to store right after setting the data property.
 ```
 $image = new WebImage();
 $image->setData($rawImage);
 ```
 
-### Step 5: Use WeedManager to store
+### Step 6: Use WeedManager to store
 Use the weedphp's manager to store
 ```
 $weedManager = $this->get('weed_php.manager');
@@ -130,7 +138,7 @@ $entityManager->persist($image);
 $entityManager->flush();
 ```
 
-### Step 6: Retrieve and delete files
+### Step 7: Retrieve and delete files
 The manager also retrieves and deletes
 ```
 $weedManager = $this->get('weed_php.manager');
