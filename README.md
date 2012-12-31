@@ -131,7 +131,7 @@ $entityManager->persist($image);
 $entityManager->flush();
 ```
 
-### Step 6: retrieve and delete you files
+### Step 6: retrieve and delete your files
 The manager also retrieves and deletes
 ```
 $weedManager = $this->get('weed_php.manager');
