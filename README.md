@@ -114,7 +114,7 @@ class WebImage extends BaseImage
 ```
 
 ### Step 4: Set your entities data property with your files raw data
-
+Data is not persisted, and is only temporary. So be sure to store right after storing the data.
 ```
 $image = new WebImage();
 $image->setData($rawImage);
