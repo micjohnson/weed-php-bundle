@@ -21,7 +21,10 @@ Weed-FS models after Facebook's [Haystack design paper.](http://www.usenix.org/e
 
 Weed-FS costs only 40 bytes disk storage for each file's metadata. It is so simple with O(1) disk read that you are welcome to challenge the performance with your actual use cases.
 
+Testing
+===============
 
+TODO
 
 Status
 ===============
