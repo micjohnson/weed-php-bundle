@@ -77,7 +77,6 @@ use Micjohnson\WeedPhpBundle\Entity\WeedStorableFile;
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({"baseimage" = "Test\WeedPhpBundle\Entity\BaseImage", "webimage" = "Test\WeedPhpBundle\Entity\WebImage"})
- * @ORM\Entity()
  * @ORM\Table(name="test_weed_php")
  *
  */
