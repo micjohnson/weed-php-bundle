@@ -55,6 +55,11 @@ class WeedStorableFile
 		$this->data = $data;
 	}
 	
+	public function getData()
+	{
+		return $this->data;
+	}
+	
 	public function getVersionOffset($version)
 	{
 		foreach($this->versions as $offset=>$version) {
