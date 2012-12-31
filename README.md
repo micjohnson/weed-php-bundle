@@ -36,6 +36,10 @@ Documentation
 
 This bundle is meant to be tested only, it will be updated rapidly.
 
+This guide assumes:
+ - You have Weed-FS 0.26+ master/volume(s) running (link above)
+ - You are using Doctrine
+
 ### Step 1: Install using composer
 
 Add to your composer.json
