@@ -73,6 +73,9 @@ class WeedStorage
         $volumeId = explode(',', $entity->getFileId());
         $volumeId = $volumeId[0];
         if($serverAddress = $this->randomLookup($volumeId)) {
+            if(!$entity->getVersions()) {
+                throw new \Exception("No information about this files versions are stored");
+            }
             foreach($entity->getVersions() as $offset=>$name) {
                 $this->weedPhp->delete($serverAddress, $fileId);
                 $fileId = $entity->getFileId() . '_' . ($offset+1);
