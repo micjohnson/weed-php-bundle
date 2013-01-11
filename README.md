@@ -159,6 +159,7 @@ $entityManager->flush();
 
 ### Step 7: Retrieve and delete files
 The manager also retrieves and deletes
+
 ```
 $weedManager = $this->get('weed_php.manager');
 
@@ -169,12 +170,14 @@ $weedManager->delete($image);
 // file is gone, you can get rid fo the entity
 $entityManager->remove($image);
 $entityManager->flush();
+
 ```
 By default when you call $weedManager->retrieve($image); it grabs the first, or only version of file, if $data is an array.  
 
 You can optionally pass a second parameter which is the name you gave the version of your file. This will access that version instead of the default.
   
 Assuming you have data stored labeled "sm"
+
 ```
 $smallThumbRaw = $weedManager->retrieve($image, "sm");
 ```
