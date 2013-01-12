@@ -85,10 +85,10 @@ class WeedStorableFile
 		return $this->versions;
 	}
 
-	public function hasVersion($version)
+	public function hasVersion($versionName)
 	{
 		foreach($this->versions as $version) {
-			if($version == $version) {
+			if($versionName == $version) {
 				return true;
 			}
 		}
