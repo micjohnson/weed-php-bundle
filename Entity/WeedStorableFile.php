@@ -24,16 +24,22 @@ class WeedStorableFile
 	protected $data;
 
 	/**
-	 * @ORM\Column(name="versions", type="array", nullable=true)
 	 * @var array versions of data stored
+	 *
+	 * @ORM\Column(name="versions", type="array", nullable=true)
 	 */
-	protected $versions = array();
+	protected $versions;
 
 	/**
 	 * @ORM\Column(name="replication_scheme", type="string", length=10, nullable=true)
 	 * @var string
 	 */
 	protected $replicationScheme;
+
+	public function __construct()
+	{
+	    $this->versions = array();
+	}
 
 	public function getReplicationScheme()
 	{
