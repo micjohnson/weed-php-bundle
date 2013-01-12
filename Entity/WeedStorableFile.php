@@ -27,7 +27,7 @@ class WeedStorableFile
 	 * @ORM\Column(name="versions", type="array", nullable=true)
 	 * @var array versions of data stored
 	 */
-	protected $versions;
+	protected $versions = array();
 
 	/**
 	 * @ORM\Column(name="replication_scheme", type="string", length=10, nullable=true)
@@ -65,10 +65,10 @@ class WeedStorableFile
 		return $this->data;
 	}
 
-	public function getVersionOffset($version)
+	public function getVersionOffset($versionName)
 	{
 		foreach($this->versions as $offset=>$version) {
-			if($version == $version) {
+			if($versionName == $version) {
 				return $offset;
 			}
 		}
